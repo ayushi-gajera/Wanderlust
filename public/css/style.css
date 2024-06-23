@@ -92,3 +92,10 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+/* Map */
+
+#map {
+    height: 100px;
+    width: 100px;
+}

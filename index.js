@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV != "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -78,7 +82,6 @@ app.all("*", (req, res, next) => {
 
 app.use((err, req, res, next) => {
   let { StatusCode = 500, message = "Something went wrong" } = err;
-  // res.status(StatusCode).send(message);
   res.status(StatusCode).render("listings/error.ejs", { message });
 });
 
